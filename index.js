@@ -54,15 +54,15 @@ Promise.all(promisesBooks).then(res => {
          
               console.log("Средний рейтинг по жанру :\n");
               results.rating.forEach(pos => {
-                let bar = `${'#'.repeat( Math.floor(pos.avgCount*10))}`.padEnd(maxBar*10 + 5);
-                let str = `${pos.genre.padEnd(maxLen + 5)}:  ${bar} ${(pos.avgCount*10).toFixed(2)}`;
+                let bar = `${'#'.repeat( Math.floor(pos.avgCount))}`.padEnd(maxBar);
+                let str = `${pos.genre.padEnd(maxLen + 5)}:  ${bar} ${(pos.avgCount).toFixed(2)}`;
                 console.log(str);
               });
 
               console.log("\nСреднее количество комментариев по жанру:\n");
               arrayBooks.forEach(pos => {
-                let bar = `${'#'.repeat(Math.floor(pos.commentCount))}`.padEnd(maxComment + 5);
-                let str = `${pos.name.padEnd(maxLen + 5)} ${bar} ${(pos.commentCount*5).toFixed(2)}`;
+                let bar = `${'#'.repeat(Math.floor(pos.commentCount))}`.padEnd(maxComment);
+                let str = `${pos.name.padEnd(maxLen + 5)} ${bar} ${(pos.commentCount*4).toFixed(0)}`;
                 console.log(str);
               }); 
             });
